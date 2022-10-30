@@ -240,7 +240,7 @@ button {
     margin-top: 16px;
 }
 
-.intro_wrapper {
+.intro__wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 380px);
@@ -248,7 +248,7 @@ button {
     grid-row-gap: 30px;
 }
 
-.intro_wrapper div {
+.intro__wrapper div {
     border-radius: 20px;
 }
 
@@ -875,7 +875,7 @@ textarea {
         letter-spacing: 0.25px;
     }
 
-    .intro_wrapper {
+    .intro__wrapper {
         width: 100vw;
         max-width: 576px;
         margin: 0 auto;
