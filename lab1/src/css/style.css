@@ -10,6 +10,7 @@ body {
     background-image: url(../img/intro/bg.jpg);
     background-size: contain;
     background-repeat: no-repeat;
+    color: #2D3436;
 }
 
 li, ul {
@@ -126,8 +127,6 @@ button {
     font-weight: 700;
     font-size: 48px;
     line-height: 117%;
-    
-    color: #2D3436;    
 }
 
 .nav {
@@ -190,6 +189,7 @@ button {
     max-width: 1200px;
     margin: 0 auto;
     padding: 192px 0 80px;
+    overflow-x: hidden;
 }
 
 .intro__offer {
@@ -208,7 +208,6 @@ button {
     text-align: center;
     letter-spacing: -3px;
 
-    color: #2D3436;
     text-shadow: 0px 4px 0px #FFFFFF;
 }
 
@@ -235,20 +234,20 @@ button {
     line-height: 77px;
     text-align: center;
     letter-spacing: -1px;
-    color: #2D3436;
 
     margin-top: 16px;
 }
 
-.intro_wrapper {
+.intro__wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 380px);
     grid-column-gap: 30px;
     grid-row-gap: 30px;
+    justify-content: center;
 }
 
-.intro_wrapper div {
+.intro__wrapper div {
     border-radius: 20px;
 }
 
@@ -265,7 +264,7 @@ button {
     margin: 118px 0 30px;
 }
 
-.intro_btn {
+.intro__btn {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -370,8 +369,6 @@ button {
     
     text-align: center;
     letter-spacing: -1px;
-    
-    color: #2D3436;
 }
 
 .services__subtitle {
@@ -451,8 +448,6 @@ button {
     text-align: center;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    
-    color: #2D3436;
 
     display: flex;
     justify-content: center;
@@ -469,8 +464,6 @@ button {
     line-height: 117%;
     
     letter-spacing: -1px;
-
-    color: #2D3436;
 
     margin: 16px 0 24px;
 }
@@ -492,8 +485,6 @@ button {
     font-weight: 400;
     font-size: 18px;
     line-height: 178%;
-    
-    color: #2D3436;
 
     margin-left: 16px;
 }
@@ -529,8 +520,6 @@ button {
     font-size: 24px;
     line-height: 150%;
     letter-spacing: -0.25px;
-    
-    color: #2D3436;
 
     padding: 87px 0 80px;
 }
@@ -540,8 +529,6 @@ button {
     font-size: 32px;
     line-height: 150%;
     letter-spacing: -0.5px;
-    
-    color: #2D3436
 }
 .values__description {
     margin: 16px 0 32px;
@@ -553,8 +540,6 @@ button {
     text-align: left;
 
     letter-spacing: -0.25px;
-
-    color: #2D3436;
 }
 .values__icon {
     border-radius: 999px;
@@ -582,8 +567,6 @@ button {
     font-size: 24px;
     line-height: 150%;
     letter-spacing: 0.25px;
-    
-    color: #2D3436;
 }
 .value__description {
     font-family: 'Inter', sans-serif;
@@ -591,8 +574,6 @@ button {
     font-size: 18px;
     line-height: 178%;
     letter-spacing: 0.1px;
-    
-    color: #2D3436;
 
     width: 270px;
     margin: 16px 0;
@@ -721,9 +702,6 @@ button {
     font-weight: 400;
     font-size: 18px;
     line-height: 178%;
-
-    color: #2D3436;
-
     padding: 8px 16px;
     width: 270px;
     border-radius: 16px;
@@ -794,10 +772,6 @@ textarea {
 /* max-width: 767px */
 
 @media screen and (max-width: 767px) {
-    body {
-        overflow-x: hidden;
-    }
-
     .container {
         width: 360px;
     }
@@ -875,11 +849,11 @@ textarea {
         letter-spacing: 0.25px;
     }
 
-    .intro_wrapper {
+    .intro__wrapper {
         width: 100vw;
         max-width: 576px;
         margin: 0 auto;
-        grid-gap: 15px 15px;
+        grid-gap: 10px 10px;
         grid-template-rows: repeat(2, 183px);
     }
 
@@ -888,46 +862,52 @@ textarea {
     }
 
     .yellow {
-        width: 130px;
+        width: 100%;
         height: 223px;
         margin: 61px 0 30px;
     }
 
-    .intro_btn {
+    .intro__btn {
+        width: 130px;
+        height: 37px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 14px;
-        padding: 7px 28px;
+        letter-spacing: 0.2px;
+        padding: 0;
     }
 
     .box2 {
-        width: 323px;
+        width: 270px;
     }
 
     .teal {
-        width: 224px;
+        width: 170px;
         height: 183px;
     }
 
     .box__title {
-        font-size: 32px;
+        font-size: 24px;
     }
 
     .purple, .box3 {
-        width: 84px;
+        width: 90px;
         height: 107px;
         margin-top: 76px;
     }
 
     .box4 {
-        width: 323px;
+        width: 270px;
     }
 
     .pink {
-        width: 130px;
+        width: 120px;
         height: 136px;
     }
 
     .darkblue {
-        width: 178px;
+        width: 140px;
         height: 182px;
     }
 
@@ -942,6 +922,10 @@ textarea {
         padding: 40px 0;
     }
 
+    .services__offer {
+        width: 330px;
+    }
+
     .services__title {
         font-size: 32px;
         line-height: 48px;
@@ -950,7 +934,7 @@ textarea {
     }
 
     .services__subtitle {
-        width: 300px;
+        width: 280px;
         font-size: 24px;
         line-height: 150%;
         text-align: left;
