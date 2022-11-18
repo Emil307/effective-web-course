@@ -7,11 +7,13 @@ showSlides(slideIndex);
 function nextSlide() {
     showSlides(slideIndex += 1);
     localStorage.setItem('index', slideIndex);
+    addTimer();
 }
 
 function previousSlide() {
     showSlides(slideIndex -= 1);
 	localStorage.setItem('index', slideIndex);
+    addTimer();
 }
 
 function currentSlide(n) {
@@ -46,20 +48,28 @@ prev.onclick = function() {
 document.addEventListener('keydown', function (event) {
     if (event.code == 'Space') {
         nextSlide();
+        addTimer();
         localStorage.setItem('index', slideIndex);
     };
     if (event.code == 'ArrowRight') {
         nextSlide();
+        addTimer();
         localStorage.setItem('index', slideIndex);
     };
     if (event.code == 'ArrowLeft') {
         previousSlide();
+        addTimer();
         localStorage.setItem('index', slideIndex);
     };
 });
 
-let timer = setInterval(function() {
-    slideIndex++;
-    showSlides(slideIndex);
-	localStorage.setItem('index', slideIndex);
-}, 7000);
+let timer = 0;
+addTimer();
+function addTimer() {
+    clearInterval(timer)
+    timer = setInterval(function() {
+        slideIndex++;
+        showSlides(slideIndex);
+        localStorage.setItem('index', slideIndex);
+    }, 7000);
+}
