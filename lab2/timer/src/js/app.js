@@ -8,8 +8,18 @@ const audio = document.getElementById('audio');
 allTime = localStorage.getItem('allTime');
 minutes_input.value = localStorage.getItem('minutesLeft');
 seconds_input.value = localStorage.getItem('secondsLeft');
+let isTimerActive = localStorage.getItem('isTimerActive');
 
-function clickStart() {
+if (isTimerActive) {
+    startTimer();
+}
+minutes_input.value = '0';
+seconds_input.value = '0';
+function startTimer() {
+    if (minutes_input.value !== '0' || seconds_input.value !== '0') {
+
+    isTimerActive = true;
+    localStorage.setItem('isTimerActive', isTimerActive);
     minutes_value = minutes_input.value;
     seconds_value = seconds_input.value;
     allTime = minutes_value * 60000 + seconds_value * 1000;
@@ -56,12 +66,18 @@ function clickStart() {
 
     function clickReset() {
         clearTimeout(timerId)
+        clearInterval(intervalId);
         document.body.setAttribute('style', 'background:#fff;')
-        minutes_input.value = '';
-        seconds_input.value = '';
+        minutes_input.value = '0';
+        seconds_input.value = '0';
         minutes_value = 0;
         seconds_value = 0;
+        localStorage.removeItem('secondsLeft');
+        localStorage.removeItem('minutesLeft');
+        localStorage.removeItem('allTime');
+        localStorage.removeItem('isTimerActive')
         allTime = 0;
+        isTimerActive = false;
         minutes_input.disabled = false;
         seconds_input.disabled = false;
         start.disabled = false;
@@ -72,5 +88,6 @@ function clickStart() {
     stoper.onclick = clickStop;
     reset.onclick = clickReset;
 }
+}
 
-start.onclick = clickStart;
+start.onclick = startTimer;
